@@ -1,111 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hitesh Kotte M.Sc</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #bbb 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-        header a:hover {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            overflow: hidden;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        .main {
-            padding: 30px 0;
-            font-size: 16px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .main.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        header.dark-mode {
-            background: #222;
-            border-bottom: #444 3px solid;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #333; color: white; padding-top: 30px; min-height: 70px; border-bottom: #bbb 3px solid; }
+        header a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 16px; }
+        header ul { padding: 0; margin: 0; list-style: none; overflow: hidden; }
+        header li { float: left; display: inline; padding: 0 20px 0 20px; }
+        header #branding { float: left; }
+        header #branding h1 { margin: 0; }
+        header nav { float: right; margin-top: 10px; }
+        header .highlight, header .current a { color: #e8491d; font-weight: bold; }
+        header a:hover { color: #ffffff; font-weight: bold; }
+        .button { height: 34px; background: #e8491d; border: 0; padding-left: 20px; padding-right: 20px; color: #ffffff; }
+        .main { padding: 30px 0; font-size: 16px; }
+        .main h1, .main h2 { color: #333; }
+        .main p { margin-bottom: 15px; }
+        .main ul { list-style: square; margin-left: 20px; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        h2, h3 { color: #333; }
+        p, li { line-height: 1.6; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .education h3 { color: #e8491d; }
+        /* About Me Section */
+        #about img { border-radius: 50%; margin-bottom: 20px; }
+        #about { text-align: center; padding-bottom: 40px; }
+        #about h2 { margin-bottom: 10px; }
+        #about p { font-size: 18px; }
+        /* Experience Section */
+        #experience { padding-bottom: 40px; }
+        #experience h3 { margin-top: 30px; color: #e8491d; }
+        #experience p { font-weight: bold; }
+        #experience ul { list-style-type: disc; margin-left: 20px; }
+        .skill-category { margin-bottom: 20px; }
+        .skill-category h3 { color: #e8491d; margin-bottom: 10px; }
+        .skill-category ul { list-style-type: none; /* Remove bullet points */ padding: 0; }
+        .skill-category li { background-color: #f2f2f2; /* Light grey background */ margin-bottom: 5px; /* Spacing between items */ padding: 5px 10px; /* Padding inside each item */ border-radius: 5px; /* Rounded corners */ }
+        #contact { font-family: 'Helvetica', sans-serif; /* Professional font */ color: #333; /* Dark grey for text */ text-align: center; /* Center align content */ background-color: #f2f2f2; /* Background color */ padding: 20px; /* Padding around the section */ }
+        #contact h2 { color: #003366; /* Heading color */ font-size: 24px; font-weight: bold; margin-bottom: 30px; /* Space below heading */ }
+        #contact p { display: flex; justify-content: center; /* Center content horizontally */ align-items: center; /* Align icons and text vertically */ font-size: 16px; margin-bottom: 15px; /* Space between paragraphs */ }
+        #contact i { margin-right: 10px; /* Space between icon and text */ font-size: 20px; /* Icon size */ }
+        #contact a { color: #0066cc; /* Contrasting color for links */ text-decoration: none; /* No underline */ }
+        #contact a:hover { text-decoration: underline; /* Underline on hover */ }
+        /* Style for the thank you note */ #contact p.thank-you { font-style: italic; margin-top: 30px; font-size: 18px; }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -128,15 +70,26 @@
         </div>
     </header>
     <div class="container main">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a Machine Learning Engineer deeply passionate about artificial intelligence and computer vision. Originally from India, I began my academic journey with a Bachelor of Science in Computer Science, where I developed a strong foundation in programming and technology. This foundation led me to pursue a Master’s degree in Data Science and Artificial Intelligence at Saarland University in Germany.</p>
-            <p>My expertise lies in computer vision, where I utilize advanced techniques such as the YOLOv7 model. One of my notable projects is an innovative application for gym environments that offers real-time posture correction feedback. This project exemplifies my ability to merge technical skills with practical applications to enhance health and fitness routines.</p>
-            <p>In addition to my strong background in computer vision and machine learning, I am also well-versed in ML operations. I understand the importance of deploying, monitoring, and maintaining machine learning models in production environments, ensuring they deliver reliable and efficient performance.</p>
-            <p>My comprehensive educational background and hands-on experience equip me to explore new technological advancements continuously. I am eager to contribute meaningful solutions to the AI landscape, driven by creativity, technical expertise, and a deep understanding of user needs. I am particularly interested in opportunities where I can combine my skills to drive innovation and operational excellence.</p>
+        <section id="about" style="text-align: center;">
+            <img src="image.jpeg" alt="Hitesh Kotte" style="width:200px;height:auto;">
+            <h2 style="color: #003366;">About Me</h2>
+            <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
+                I am a Machine Learning Engineer deeply passionate about artificial intelligence and computer vision. Originally from India, I began my academic journey with a Bachelor of Science in Computer Science, where I developed a strong foundation in programming and technology. This foundation led me to pursue a Master’s degree in Data Science and Artificial Intelligence at Saarland University in Germany.
+            </p>
+            <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
+                My expertise lies in computer vision, where I utilize advanced techniques such as the YOLOv7 model. One of my notable projects is an innovative application for gym environments that offers real-time posture correction feedback. This project exemplifies my ability to merge technical skills with practical applications to enhance health and fitness routines.
+            </p>
+            <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
+                In addition to my strong background in computer vision and machine learning, I am also well-versed in ML operations. I understand the importance of deploying, monitoring, and maintaining machine learning models in production environments, ensuring they deliver reliable and efficient performance.
+            </p>
+            <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
+                My comprehensive educational background and hands-on experience equip me to explore new technological advancements continuously. I am eager to contribute meaningful solutions to the AI landscape, driven by creativity, technical expertise, and a deep understanding of user needs. I am particularly interested in opportunities where I can combine my skills to drive innovation and operational excellence.
+            </p>
         </section>
+
+
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2 style="color: #003366;">Professional Experience</h2>
             <h3>Research Assistant - German Research Center for Artificial Intelligence (DFKI)</h3>
             <p>January 2023 - Present</p>
             <p>Berlin, Germany</p>
@@ -153,13 +106,17 @@
                 <li>Established communication channels for real-time transmission of webcam frames and processed these frames using YOLOv7.</li>
             </ul>
             <p>Contact for this Project: Milos Kravcik - <a href="mailto:Milos.Kravcik@dfki.de">Milos.Kravcik@dfki.de</a></p>
+
             <h3>Testing Manager - CTC Advanced Gmbh</h3>
             <p>June 2022 - December 2022</p>
             <p>Smart Card Technologies</p>
             <p>Saarbrucken, Germany</p>
+            
             <ul>
                 <li>Worked on Smart Card Technologies, focusing on testing Visa and Mastercards for the "Tap for Pay" feature.</li>
             </ul>
+
+            <!-- New Experience at CISPA Helmholtz Center -->
             <h3>Research Assistant - CISPA Helmholtz Center for Information Security (CISPA)</h3>
             <p>January 2022 - June 2022</p>
             <p>Sensor Fusion for Autonomous Vehicles.</p>
@@ -171,12 +128,15 @@
                 <li>Implemented attack strategies and explored defense solutions for autonomous vehicle security.</li>
             </ul>
             <p>Contact for this Project: Mridula Singh - <a href="mailto:Singh@cispa.de">Singh@cispa.de</a></p>
+        
+
             <h3>Graduate Engineer Trainee - Xcelerator - Learn By Doing</h3>
             <ul>
                 <li>Implemented machine learning ideas for a suggestion engine on the webpage.</li>
                 <li>Responsible for maintaining the suggestion engine webpage.</li>
             </ul>
         </section>
+        
 
         <section id="education">
             <h2 style="color: #003366;">Education</h2>
